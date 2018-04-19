@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.edward.beijingnews.activitys.GuideActivity;
+import com.example.edward.beijingnews.activitys.MainActivity;
 import com.example.edward.beijingnews.utils.CacheUtils;
 
 public class SplashActivity extends Activity {
@@ -71,7 +72,7 @@ public class SplashActivity extends Activity {
             Intent intent;
 
             if (isStartMain) {
-                intent = new Intent();
+                intent = new Intent(SplashActivity.this,MainActivity.class);
             } else  {
                 intent = new Intent(SplashActivity.this,GuideActivity.class);
             }
