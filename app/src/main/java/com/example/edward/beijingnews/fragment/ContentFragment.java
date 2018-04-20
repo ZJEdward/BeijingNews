@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.edward.beijingnews.R;
 import com.example.edward.beijingnews.activitys.MainActivity;
+import com.example.edward.beijingnews.adapter.ContentFragmentAdapter;
 import com.example.edward.beijingnews.base.BaseFragment;
 import com.example.edward.beijingnews.base.BasePager;
 import com.example.edward.beijingnews.pager.GovaffairPager;
@@ -82,7 +83,7 @@ public class ContentFragment extends BaseFragment {
         basePagers.add(new SettingPager(context));//设置中心面
 
         //设置ViewPager的适配器
-        viewPager.setAdapter(new ContentFragmentAdapter());
+        viewPager.setAdapter(new ContentFragmentAdapter(basePagers));
 
         //设置RadioGroup的选中状态改变的监听
         rg_main.setOnCheckedChangeListener(new MyOnCheckedChangeListener());
@@ -176,33 +177,33 @@ public class ContentFragment extends BaseFragment {
         mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
 
-    class ContentFragmentAdapter  extends PagerAdapter {
-
-
-        @Override
-        public int getCount() {
-            return basePagers.size();
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            BasePager basePager = basePagers.get(position);//各个页面的实例
-            View rootView = basePager.rootView;//各个子页面
-            //调用各个页面的initData()
-//            basePager.initData();//初始化数据
-            container.addView(rootView);
-            return rootView;
-        }
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
-
-
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
-    }
+//    class ContentFragmentAdapter  extends PagerAdapter {
+//
+//
+//        @Override
+//        public int getCount() {
+//            return basePagers.size();
+//        }
+//
+//        @Override
+//        public Object instantiateItem(ViewGroup container, int position) {
+//            BasePager basePager = basePagers.get(position);//各个页面的实例
+//            View rootView = basePager.rootView;//各个子页面
+//            //调用各个页面的initData()
+////            basePager.initData();//初始化数据
+//            container.addView(rootView);
+//            return rootView;
+//        }
+//        @Override
+//        public boolean isViewFromObject(View view, Object object) {
+//            return view == object;
+//        }
+//
+//
+//
+//        @Override
+//        public void destroyItem(ViewGroup container, int position, Object object) {
+//            container.removeView((View) object);
+//        }
+//    }
 }

@@ -1,10 +1,11 @@
-package com.atguigu.beijingnews.adapter;
+package com.example.edward.beijingnews.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.atguigu.beijingnews.base.BasePager;
+
+import com.example.edward.beijingnews.base.BasePager;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  * QQ号：541433511
  * 作用：ContentFragmentAdapter
  */
-public class ContentFragmentAdapter  extends PagerAdapter {
+public class ContentFragmentAdapter extends PagerAdapter {
 
     private final ArrayList<BasePager> basePagers;
 
